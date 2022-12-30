@@ -9,7 +9,3 @@ A
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-u
-Eapp/src/main/java/com/insecticidepls/gmailui/components/MainAppBar.kt,5\9\597b7d84d8ef3a70992b9d580d26db9a1cca2224

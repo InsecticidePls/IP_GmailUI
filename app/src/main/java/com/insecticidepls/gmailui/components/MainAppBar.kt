@@ -1,7 +1,12 @@
 package com.insecticidepls.gmailui.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.IconButton
@@ -21,12 +26,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.insecticidepls.gmailui.GmailUI
 import com.insecticidepls.gmailui.R
-import com.insecticidepls.gmailui.ui.theme.IP_GmailUITheme
+import com.insecticidepls.gmailui.ui.theme.IPGmailUITheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun MainAppBar(scaffoldState: ScaffoldState, scope: CoroutineScope) {
+fun MainAppBar(
+    scaffoldState: ScaffoldState,
+    scope: CoroutineScope,
+    modifier: Modifier = Modifier
+) {
+    //Reminder: Find something to apply here (Compose rule: modifier parameter)
+    modifier.padding()
+
     Box (modifier = Modifier.padding(10.dp)){
         Card (
             modifier = Modifier.requiredHeight(50.dp),
@@ -59,7 +71,7 @@ fun MainAppBar(scaffoldState: ScaffoldState, scope: CoroutineScope) {
 @Preview
 @Composable
 fun DefPreview() {
-    IP_GmailUITheme{
+    IPGmailUITheme{
         GmailUI()
     }
 }

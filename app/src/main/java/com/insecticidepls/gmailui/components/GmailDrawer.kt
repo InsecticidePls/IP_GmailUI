@@ -2,7 +2,11 @@ package com.insecticidepls.gmailui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
@@ -12,9 +16,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.insecticidepls.gmailui.model.GmailMenuData
+
+private const val PADDING_DEFAULT = 20
+private const val PADDING_MODIFIER_DRAWER = 16
+private const val HEIGHT_MODIFIER_DRAWER = 50
+
+private const val WEIGHT_DRAWER_TEXT = 2f
+private const val WEIGHT_DRAWER_IMAGE = 0.5f
+
 
 @Composable
-fun GmailMenu(scrState: ScrollState) {
+fun GmailMenu(
+    scrState: ScrollState,
+    modifier: Modifier = Modifier
+) {
+    //Reminder: Find something to apply here (Compose rule: modifier parameter)
+    modifier.padding()
 
     val gmailList = listOf(
         GmailMenuData.Divider,
@@ -41,10 +59,12 @@ fun GmailMenu(scrState: ScrollState) {
         GmailMenuData.Help
     )
 
-
     Column (Modifier.verticalScroll(scrState)) {
         Text(text = "Gmail",
-            modifier = Modifier.padding(start = 20.dp, top = 20.dp),
+            modifier = Modifier.padding(
+                start = PADDING_DEFAULT.dp,
+                top = PADDING_DEFAULT.dp
+            ),
             fontSize = 20.sp,
             fontWeight = FontWeight.Normal,
             color = Color.Red
@@ -54,14 +74,22 @@ fun GmailMenu(scrState: ScrollState) {
             item ->
             when {
                 item.isDivider -> {
-                    Divider(modifier = Modifier.padding(bottom = 20.dp, top = 20.dp))
+                    Divider(
+                        modifier = Modifier.padding(
+                            bottom = PADDING_DEFAULT.dp,
+                            top = PADDING_DEFAULT.dp
+                        ))
                 }
 
                 item.isHeader -> {
                     Text(
                         text = item.title!!,
                         fontWeight= FontWeight.Light,
-                        modifier = Modifier.padding(start = 20.dp, bottom = 20.dp, top = 20.dp))
+                        modifier = Modifier.padding(
+                            start = PADDING_DEFAULT.dp,
+                            bottom = PADDING_DEFAULT.dp,
+                            top = PADDING_DEFAULT.dp
+                        ))
                 }
                 else -> {
                     GDrawerComposer(item = item)
@@ -72,17 +100,25 @@ fun GmailMenu(scrState: ScrollState) {
 }
 
 @Composable
-fun GDrawerComposer (item: GmailMenuData) {
+fun GDrawerComposer (
+    item: GmailMenuData,
+    modifier: Modifier = Modifier
+) {
+    //Reminder: Find something to apply here (Compose rule: modifier parameter)
+    modifier.padding()
+
     Row(
         modifier = Modifier.fillMaxWidth()
-            .height(50.dp)
-            .padding(top = 16.dp)
+            .height(HEIGHT_MODIFIER_DRAWER.dp)
+            .padding(top = PADDING_MODIFIER_DRAWER.dp)
     ) {
         Image(
             imageVector = item.icon!!,
             contentDescription = item.title!!,
-            modifier = Modifier.weight(0.5f)
+            modifier = Modifier.weight(WEIGHT_DRAWER_IMAGE)
         )
-        Text(text = item.title, modifier = Modifier.weight(2.0f))
+        Text(text = item.title, modifier = Modifier.weight(WEIGHT_DRAWER_TEXT))
     }
 }
+
+
