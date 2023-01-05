@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -43,7 +44,7 @@ fun MailScreen(
     Box(modifier = Modifier.padding(paddingValues)) {
         LazyColumn(modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(start = 16.dp)
             .scrollable(scrollState, Orientation.Vertical)
         ) {
             items(mailList) {
@@ -65,15 +66,16 @@ fun MailItem(
         Card(
             Modifier
                 .padding(
-                    end = 8.dp
+                    end = 16.dp
                 )
-                .size(40.dp)
+                .size(42.dp)
                 .clip(CircleShape)
         ) {
             Text(
                 text = mailData.userName[0].toString(),
                 textAlign = TextAlign.Center,
-                modifier = modifier.padding(10.dp)
+                modifier = modifier.fillMaxWidth().fillMaxHeight().padding(top = 5.dp),
+                fontSize = 24.sp,
             )
         }
 

@@ -11,15 +11,7 @@ A
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 7
 gradlew,5\b\5bbfa66edb4db3c7c33c5181f43510990d3307f9
-H
-config/detekt/detekt.yml,5\a\5a8eccd34aefbab894eaadc3b79e57f6c456425d
 K
 config/detekt/detekt.gradle,a\1\a1e5cd7d96fb3a08be069131b2a42cffa37c6167
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-h
-8app/src/main/java/com/insecticidepls/gmailui/MockData.kt,0\1\014f03276c7633dccf4f08cf46dfe8344a857cb3
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/com/insecticidepls/gmailui/model/MailData.kt,a\0\a0cb5df070d42d4ce3eb0bbaccb972abb7d5cce3
