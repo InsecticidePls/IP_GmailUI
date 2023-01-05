@@ -76,7 +76,7 @@ fun MailItem(
                 modifier = modifier.padding(10.dp)
             )
         }
-        
+
         Column(
             modifier = Modifier.weight(2f)
         ) {
