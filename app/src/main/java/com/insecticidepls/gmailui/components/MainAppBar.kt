@@ -10,10 +10,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.IconButton
-import androidx.compose.material.ScaffoldState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,9 +32,10 @@ import com.insecticidepls.gmailui.ui.theme.IPGmailUITheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainAppBar(
-    scaffoldState: ScaffoldState,
+    drawerState: DrawerState,
     scope: CoroutineScope,
     modifier: Modifier = Modifier
 ) {
@@ -51,7 +54,7 @@ fun MainAppBar(
                     .padding(8.dp)) {
                 IconButton(onClick = {
                     scope.launch {
-                        scaffoldState.drawerState.open()
+                        drawerState.open()
                     }
                 }) {
                     Icon(Icons.Default.Menu, "Menu")

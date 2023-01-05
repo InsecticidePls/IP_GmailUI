@@ -7,12 +7,12 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/gmail"
         android:supportsRtl="true"
-        android:theme="@style/Theme.IP_GmailUI"
+        android:theme="@style/Theme.IPGmailUI"
         tools:targetApi="33">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.IP_GmailUI">
+            android:theme="@style/Theme.IPGmailUI">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

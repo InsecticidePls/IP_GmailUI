@@ -2,13 +2,14 @@ package com.insecticidepls.gmailui.components
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
-import androidx.compose.material.ExtendedFloatingActionButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
@@ -20,6 +21,9 @@ fun GMailFab(
     scrollState: ScrollState,
     modifier: Modifier = Modifier
 ) {
+    //Reminder: Find something to apply here
+    modifier.padding()
+
     if (scrollState.value > SCROLL_VALUE) {
         ExtendedFloatingActionButton(
             text = {
@@ -32,12 +36,10 @@ fun GMailFab(
             icon = {
                 Icon(imageVector = Icons.Default.Edit,"")
             },
-            backgroundColor = MaterialTheme.colors.surface,
         )
     } else {
         FloatingActionButton(
             onClick = {},
-            modifier = modifier.background(MaterialTheme.colors.background)
         ) {
             Icon(imageVector = Icons.Default.Edit, contentDescription = "")
         }

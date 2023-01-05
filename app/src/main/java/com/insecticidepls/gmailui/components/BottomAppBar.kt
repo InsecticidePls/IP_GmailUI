@@ -1,12 +1,14 @@
 package com.insecticidepls.gmailui.components
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+//import androidx.compose.ui.graphics.Color
 import com.insecticidepls.gmailui.model.BottomMenuData
 
 
@@ -22,15 +24,15 @@ fun BottomAppBar(
         BottomMenuData.Meet
     )
 
-    BottomNavigation(
-        backgroundColor = Color.White,
-        contentColor = Color.Black
+    NavigationBar(
+        tonalElevation = 2.dp
     ) {
         bottomItems.forEach {
-            BottomNavigationItem(
+            NavigationBarItem(
                 selected = false,
-                onClick = {},
-                icon = { Icon(imageVector = it.icon, contentDescription = null) }
+                label = { it.title?.let { it1 -> Text(text = it1) } },
+                onClick = { },
+                icon = { Icon(imageVector = it.icon, contentDescription = it.title) }
             )
         }
     }
