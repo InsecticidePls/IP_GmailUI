@@ -53,8 +53,6 @@ fun GmailMenu(
     //Reminder: Find something to apply here (Compose rule: modifier parameter)
     modifier.padding()
 
-
-
     Column (Modifier.verticalScroll(scrState).background(MaterialTheme.colorScheme.background).width(300.dp)) {
         Text(text = "Gmail",
             modifier = Modifier.padding(

@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:icon="@drawable/gmail"
+        android:icon="@drawable/ip_gmailui_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/gmail"
+        android:roundIcon="@drawable/ip_gmailui_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.IPGmailUI"
         tools:targetApi="33">

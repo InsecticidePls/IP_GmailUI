@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Card
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -59,7 +59,7 @@ fun MainAppBar(
                     Icon(Icons.Default.Menu, "Menu")
                 }
                 Text(text = "Search in mail", modifier = Modifier.weight(2f))
-                Icon(painter = painterResource(id = R.drawable._2_profile),
+                Icon(painter = painterResource(id = R.drawable.profile),
                     contentDescription = "Profile",
                 modifier = Modifier
                     .size(30.dp)

@@ -6,15 +6,12 @@ import androidx.compose.material.icons.outlined.VideoCall
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomMenuData(
-    val icon: ImageVector,
-    val title: String? = null
+    val icon: ImageVector
 ) {
     object Mail: BottomMenuData(
-        icon = Icons.Outlined.Mail,
-        title = "Mail"
+        icon = Icons.Outlined.Mail
     )
     object Meet: BottomMenuData(
-        icon = Icons.Outlined.VideoCall,
-        title = "Meet"
+        icon = Icons.Outlined.VideoCall
     )
 }

@@ -48,6 +48,7 @@ fun GmailUI(
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = { GmailMenu(scrState) },
+        gesturesEnabled = drawerState.isOpen,
         content = {
             Scaffold (
                 topBar = { MainAppBar(drawerState, corScope) },
