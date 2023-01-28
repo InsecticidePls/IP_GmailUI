@@ -3,7 +3,6 @@ package com.insecticidepls.gmailui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.DrawerValue
@@ -11,9 +10,10 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.insecticidepls.gmailui.components.BottomAppBar
 import com.insecticidepls.gmailui.components.GMailFab
 import com.insecticidepls.gmailui.components.GmailMenu
@@ -37,21 +37,19 @@ class MainActivity : ComponentActivity() {
 fun GmailUI(
     modifier: Modifier = Modifier
 ) {
-
-    //Reminder: Find something to apply here
-    modifier.padding()
-
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val corScope = rememberCoroutineScope()
     val scrState = rememberScrollState()
+    val openDialog = remember { mutableStateOf(false) }
 
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = { GmailMenu(scrState) },
         gesturesEnabled = drawerState.isOpen,
+        modifier = modifier,
         content = {
             Scaffold (
-                topBar = { MainAppBar(drawerState, corScope) },
+                topBar = { MainAppBar(drawerState, corScope, openDialog) },
                 bottomBar = { BottomAppBar() },
                 floatingActionButton = { GMailFab(scrState) }
             ) {
@@ -61,10 +59,3 @@ fun GmailUI(
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    IPGmailUITheme {
-        GmailUI()
-    }
-}

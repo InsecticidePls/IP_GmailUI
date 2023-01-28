@@ -41,13 +41,3 @@ m
 =app/src/main/java/com/insecticidepls/gmailui/ui/theme/Type.kt,d\2\d2ec642a821e41107c3e2c0395b88eabacd912a6
 K
 config/detekt/detekt.gradle,a\1\a1e5cd7d96fb3a08be069131b2a42cffa37c6167
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-n
->app/src/main/java/com/insecticidepls/gmailui/ui/theme/Color.kt,b\9\b996006759718815ed006da5ed00dfadac4286e1
-n
->app/src/main/java/com/insecticidepls/gmailui/ui/theme/Shape.kt,a\f\af28a6b2141cb1970a03e10119d6aaafc5f1d50b
-n
->app/src/main/java/com/insecticidepls/gmailui/ui/theme/Theme.kt,0\a\0a1977b4bb5d32d3a5d6c58ee9820dc84572d99a

@@ -6,7 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.verticalScroll
@@ -50,10 +50,7 @@ fun GmailMenu(
     scrState: ScrollState,
     modifier: Modifier = Modifier
 ) {
-    //Reminder: Find something to apply here (Compose rule: modifier parameter)
-    modifier.padding()
-
-    Column (Modifier.verticalScroll(scrState).background(MaterialTheme.colorScheme.background).width(300.dp)) {
+    Column (modifier.verticalScroll(scrState).background(MaterialTheme.colorScheme.background).width(300.dp)) {
         Text(text = "Gmail",
             modifier = Modifier.padding(
                 start = Constants.PADDING_DEFAULT.dp,
@@ -98,12 +95,9 @@ fun GDrawerComposer (
     item: GmailMenuData,
     modifier: Modifier = Modifier
 ) {
-    //Reminder: Find something to apply here (Compose rule: modifier parameter)
-    modifier.padding()
-
     Row(
-        modifier = Modifier.fillMaxWidth()
-            .height(Constants.HEIGHT_MODIFIER_DRAWER.dp)
+        modifier = modifier.fillMaxWidth()
+            .heightIn(Constants.HEIGHT_MODIFIER_DRAWER.dp)
             .padding(top = Constants.PADDING_MODIFIER_DRAWER.dp)
     ) {
         Image(
@@ -114,5 +108,3 @@ fun GDrawerComposer (
         Text(text = item.title, modifier = Modifier.weight(Constants.WEIGHT_DRAWER_TEXT))
     }
 }
-
-
